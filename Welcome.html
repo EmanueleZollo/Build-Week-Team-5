@@ -4,29 +4,35 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Welcome page</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <header>
-      <img src="assets/epicode_logo.png" alt="logo epicode" />
+      <img src="assets/epicode_logo.png" alt="logo epicode" width="200px" />
     </header>
-    <h1>Welcome to<br /><span>your exam</span></h1>
-    <div>
-      <h3>Instructions</h3>
-      <p>
-        We don't expect most engineers to know the answers to all of these <br />
-        questions, so don't worry if you're unsure of a few of them.
-      </p>
-      <article>
-        <ul>
-          <li>Each question is <span>timed</span> and can onlu be answered once.</li>
-          <li>Changing browser tab or opening other windows will <span>invalidate the question.</span></li>
-          <li>This exam will take approx. <strong>0-5 minutes.</strong></li>
-        </ul>
-      </article>
-      <footer style="display: inline-block">
-        <input type="checkbox" name="promise" required />I promise to answer myself without help from anyone
-        <button>PROCEED</button>
-      </footer>
+    <div class="WP-page">
+      <h1>Welcome to<br /><strong>your exam</strong></h1>
+      <div>
+        <h3>Instructions</h3>
+        <p class="WP-p">
+          We don't expect most engineers to know the answers to all of these <br />
+          questions, so don't worry if you're unsure of a few of them.
+        </p>
+        <article class="WP-article">
+          <ul>
+            <li class="WP-li">Each question is <span>timed</span> and can onlu be answered once.</li>
+            <li class="WP-li">
+              Changing browser tab or opening other windows will <span>invalidate the question.</span>
+            </li>
+            <li class="WP-li">This exam will take approx. <strong>0-5 minutes.</strong></li>
+          </ul>
+        </article>
+        <footer class="WP-footer">
+          <input id="WP-input" type="checkbox" name="promise" required /> I promise to answer myself without help from
+          anyone
+          <button class="submitButton WP-button">PROCEED</button>
+        </footer>
+      </div>
     </div>
   </body>
 </html>
