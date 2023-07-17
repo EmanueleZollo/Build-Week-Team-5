@@ -10,28 +10,30 @@
   <body>
     <main>
       <header>
-        <img class="logo" src="./assets/epicode_logo.png" alt="logo-EPICODE" />
+        <img src="" alt="logo-EPICODE" />
       </header>
-      <div class="results-title-container">
+      <div class="results-title">
         <h2>Results</h2>
         <h4>The summary of your answers:</h4>
       </div>
-      <section class="results-section-container">
-        <div class="results-left-container">
-          <h2 class="correct-wrong">Correct <br /><strong class="percentage">%</strong></h2>
+      <section>
+        <div>
+          <h2><span>Correct</span></h2>
           <p>questions</p>
         </div>
-        <div class="results-central-container">
-          <h5>Congratulations!<span>You passed the exam.</span></h5>
-          <p>We'll send you the certificate in few minutes. Check your email (including promotions / spam folder)</p>
+        <div>
+          <canvas class="donutChart">
+            <h2>Congratulations!<span>You passed the exam.</span></h2>
+            <p>We'll send you the certificate in few minutes. Check your email (including promotions / spam folder)</p>
+          </canvas>
         </div>
-        <div class="results-right-container">
-          <h2 class="correct-wrong">Wrong <br /><strong class="percentage">%</strong></h2>
+        <div>
+          <h2><span>Wrong</span></h2>
           <p>questions</p>
         </div>
       </section>
-      <footer class="results-footer">
-        <button class="results-button">RATE US</button>
+      <footer>
+        <button class="rate-us-button">RATE US</button>
       </footer>
     </main>
   </body>
