@@ -10,6 +10,7 @@ body {
     margin: 0;
     color: white;
     background-repeat: no-repeat;
+    background-size: 100%;
 }
 
 header {
@@ -30,7 +31,7 @@ h1 {
 h2{
     font-family: 'Outfit', sans-serif;
     text-align: center;
-    font-size: 325%;
+    font-size: 4.5rem;
 }
 
 h3 {
@@ -64,7 +65,8 @@ h4{
  
 #starRate {
     text-align: center;
-    margin-bottom: 60px;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
 }
 
 #comment {
@@ -79,4 +81,33 @@ h4{
 
 #centralPark {
     text-align: center;
+    margin-top: 3rem;
+}
+
+
+/* QUESTION PAGE STYLE */
+#answerPos{
+    text-align: center;
+}
+
+.answer {
+    border: 3px solid white;
+    border-radius: 30px;
+    min-width: 15rem;
+    padding: 10px auto;
+    margin: 15px;
+    display: inline-block
+}
+
+.answer p {
+    text-align: center;
+}
+
+#questionPageTitle {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 400;
+}
+
+#asadiv {
+    margin-top: 10rem;
 }
