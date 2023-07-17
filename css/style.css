@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;400;700&family=Outfit:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;400;700&family=Outfit:wght@400;700&display=swap");
 
 /* font-family: 'Inter', sans-serif;
 font-family: 'Outfit', sans-serif; */
@@ -6,55 +6,145 @@ font-family: 'Outfit', sans-serif; */
 /* #d20094 colore bottoni risposta */
 
 body {
-    background-image: url(../assets/bg.jpg);
-    margin: 0;
-    color: white;
-    background-repeat: no-repeat;
+  background-image: url(../assets/bg.jpg);
+  margin: 0;
+  color: white;
+  background-repeat: no-repeat;
 }
 
 header {
-    text-align: start;
-    padding-top: 40px;
-    padding-left: 90px;
+  text-align: start;
+  padding-top: 40px;
+  padding-left: 90px;
 }
 
 .logo {
-    width: 160px;
+  width: 160px;
 }
 
 h1 {
-    font-family: 'Outfit', sans-serif;
-    text-align: left;
+  font-family: "Outfit", sans-serif;
+  text-align: left;
 }
 
-h2{
-    font-family: 'Outfit', sans-serif;
-    text-align: center;
-    font-size: 350%;
+h2 {
+  font-family: "Outfit", sans-serif;
+  text-align: center;
+  font-size: 350%;
 }
 
 h3 {
-    color: #7b116d;
-    font-family: 'Outfit', sans-serif;
+  color: #7b116d;
+  font-family: "Outfit", sans-serif;
 }
 
-h4{
-    text-align: center;
-    font-family: 'Outfit', sans-serif;
-    font-weight: 400;
-    font-size: 150%;
+h4 {
+  text-align: center;
+  font-family: "Outfit", sans-serif;
+  font-weight: 400;
+  font-size: 150%;
 }
 
 .submitButton {
-    background-color: #00ffff;
-    color: black;
-    box-shadow: -1px 1px 29px -1px #00FFFF;
-    accent-color: #00ffff;
-    border: #00ffff 2px solid;
-    padding-inline: 35px;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    font-family: 'Inter', sans-serif;
-    font-weight: 700;
-    font-size: large;
+  background-color: #00ffff;
+  color: black;
+  box-shadow: -1px 1px 29px -1px #00ffff;
+  accent-color: #00ffff;
+  border: #00ffff 2px solid;
+  padding-inline: 35px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: large;
+}
+
+.results-title-container {
+  margin-top: 30px;
+}
+
+.results-section-container {
+  padding-inline: 90px;
+  height: 55rem;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.results-title-container h2 {
+  margin: 0;
+}
+
+.results-title-container h4 {
+  margin: 0;
+}
+
+.correct-wrong {
+  font-weight: 400;
+}
+
+.results-left-container {
+  margin: 0;
+  width: 20%;
+  display: inline-block;
+  vertical-align: middle;
+  padding-top: 300px;
+}
+
+.results-right-container {
+  margin: 0;
+  width: 20%;
+  display: inline-block;
+  vertical-align: middle;
+  padding-top: 300px;
+  opacity: 0.6;
+}
+
+.results-left-container h2 {
+  margin: 0;
+  line-height: 4.2rem;
+}
+.results-right-container h2 {
+  margin: 0;
+  line-height: 4.2rem;
+}
+
+.results-left-container p {
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  line-height: 2.5rem;
+  font-size: 1.5rem;
+}
+
+.results-right-container p {
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  line-height: 2.5rem;
+  font-size: 1.5rem;
+}
+
+.results-central-container {
+  display: inline-block;
+  width: 20%;
+  margin-inline: 10%;
+  padding-inline: 65px;
+  vertical-align: middle;
+  padding-top: 300px;
+}
+
+.results-footer {
+  text-align: center;
+}
+
+.results-button {
+  background-color: transparent;
+  color: white;
+  box-shadow: -1px 1px 29px -1px #5900ff;
+  border: white 3px solid;
+  padding-inline: 6rem;
+  padding-top: 1.8rem;
+  padding-bottom: 1.8rem;
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: 1.8rem;
+  cursor: pointer;
 }
