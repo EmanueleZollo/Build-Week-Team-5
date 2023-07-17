@@ -1,113 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;400;700&family=Outfit:wght@400;700&display=swap');
-
-/* font-family: 'Inter', sans-serif;
-font-family: 'Outfit', sans-serif; */
-
-/* #d20094 colore bottoni risposta */
-
-body {
-    background-image: url(../assets/bg.jpg);
-    margin: 0;
-    color: white;
-    background-repeat: no-repeat;
-    background-size: 100%;
-}
-
-header {
-    text-align: start;
-    padding-top: 40px;
-    padding-left: 90px;
-}
-
-.logo {
-    width: 140px;
-}
-
-h1 {
-    font-family: 'Outfit', sans-serif;
-    text-align: left;
-}
-
-h2{
-    font-family: 'Outfit', sans-serif;
-    text-align: center;
-    font-size: 4.5rem;
-}
-
-h3 {
-    color: #7b116d;
-    font-family: 'Outfit', sans-serif;
-}
-
-h4{
-    text-align: center;
-    font-family: 'Outfit', sans-serif;
-    font-weight: 400;
-    font-size: 150%;
-}
-
 .submitButton {
-    background-color: #00ffff;
-    color: black;
-    box-shadow: -1px 1px 29px -1px #00FFFF;
-    accent-color: #00ffff;
-    border: #00ffff 2px solid;
-    padding-inline: 35px;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    font-family: 'Inter', sans-serif;
-    font-weight: 700;
-    font-size: large;
-}
-
-
-/* FEEDBACK PAGE STYLE */
- 
-#starRate {
-    text-align: center;
-    margin-top: 3rem;
-    margin-bottom: 3rem;
-}
-
-#comment {
-    display: block;
-    margin: 40px auto;
-    border: none;
-    border-bottom: #d20094 1px solid;
-    width: 60%;
-    background-color: transparent;
-    
-}
-
-#centralPark {
-    text-align: center;
-    margin-top: 3rem;
-}
-
-
-/* QUESTION PAGE STYLE */
-#answerPos{
-    text-align: center;
-}
-
-.answer {
-    border: 3px solid white;
-    border-radius: 30px;
-    min-width: 15rem;
-    padding: 10px auto;
-    margin: 15px;
-    display: inline-block
-}
-
-.answer p {
-    text-align: center;
-}
-
-#questionPageTitle {
-    font-family: 'Outfit', sans-serif;
-    font-weight: 400;
-}
-
-#asadiv {
-    margin-top: 10rem;
+  background-color: #00ffff;
+  color: black;
+  box-shadow: -1px 1px 29px -1px #00ffff;
+  accent-color: #00ffff;
+  border: #00ffff 2px solid;
+  padding-inline: 35px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: large;
 }
