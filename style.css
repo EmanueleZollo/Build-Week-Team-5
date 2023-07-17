@@ -64,6 +64,7 @@ h4 {
   font-size: large;
 }
 
+/* WELCOME PAGE  STYLE*/
 .WP-page {
   padding-left: 100px;
   font-family: "Inter", sans-serif;
@@ -97,4 +98,158 @@ h4 {
 #WP-input {
   width: 30px;
   height: 30px;
+}
+
+
+/* QUESTION PAGE STYLE */
+#answerPos{
+  text-align: center;
+}
+
+.answer {
+  border: 3px solid white;
+  border-radius: 30px;
+  min-width: 15rem;
+  padding: 10px auto;
+  margin: 15px;
+  display: inline-block
+}
+
+.answer p {
+  text-align: center;
+}
+
+#questionPageTitle {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 400;
+background-color: #00ffff;
+color: black;
+box-shadow: -1px 1px 29px -1px #00ffff;
+accent-color: #00ffff;
+border: #00ffff 2px solid;
+padding-inline: 35px;
+padding-top: 15px;
+padding-bottom: 15px;
+font-family: "Inter", sans-serif;
+font-weight: 700;
+font-size: large;
+}
+
+#asadiv {
+  margin-top: 10rem;
+}
+
+/* RESULTS PAGE STYLE */
+ 
+.results-title-container {
+  margin-top: 30px;
+}
+
+.results-section-container {
+  padding-inline: 90px;
+  height: 55rem;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.results-title-container h2 {
+  margin: 0;
+}
+
+.results-title-container h4 {
+  margin: 0;
+}
+
+.correct-wrong {
+  font-weight: 400;
+}
+
+.results-left-container {
+  margin: 0;
+  width: 20%;
+  display: inline-block;
+  vertical-align: middle;
+  padding-top: 300px;
+}
+
+.results-right-container {
+  margin: 0;
+  width: 20%;
+  display: inline-block;
+  vertical-align: middle;
+  padding-top: 300px;
+  opacity: 0.6;
+}
+
+.results-left-container h2 {
+  margin: 0;
+  line-height: 4.2rem;
+}
+.results-right-container h2 {
+  margin: 0;
+  line-height: 4.2rem;
+}
+
+.results-left-container p {
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  line-height: 2.5rem;
+  font-size: 1.5rem;
+}
+
+.results-right-container p {
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  line-height: 2.5rem;
+  font-size: 1.5rem;
+}
+
+.results-central-container {
+  display: inline-block;
+  width: 20%;
+  margin-inline: 10%;
+  padding-inline: 65px;
+  vertical-align: middle;
+  padding-top: 300px;
+}
+
+.results-footer {
+  text-align: center;
+}
+
+.results-button {
+  background-color: transparent;
+  color: white;
+  box-shadow: -1px 1px 29px -1px #5900ff;
+  border: white 3px solid;
+  padding-inline: 6rem;
+  padding-top: 1.8rem;
+  padding-bottom: 1.8rem;
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+/* FEEDBACK PAGE STYLE */
+ 
+#starRate {
+  text-align: center;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+#comment {
+  display: block;
+  margin: 40px auto;
+  border: none;
+  border-bottom: #d20094 1px solid;
+  width: 60%;
+  background-color: transparent;
+  
+}
+
+#centralPark {
+  text-align: center;
+  margin-top: 3rem;
 }
