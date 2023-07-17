@@ -1,0 +1,100 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;400;700&family=Outfit:wght@400;700&display=swap");
+/* font-family: 'Inter', sans-serif;
+font-family: 'Outfit', sans-serif; */
+
+/* #d20094 colore bottoni risposta */
+
+body {
+  background-image: url(assets/bg.jpg);
+  margin: 0;
+  color: white;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+header {
+  text-align: start;
+  padding-top: 40px;
+  padding-left: 90px;
+}
+
+.logo {
+  width: 160px;
+}
+
+h1 {
+  font-family: "Outfit", sans-serif;
+  font-size: 7rem;
+  margin-top: 80px;
+  line-height: 65px;
+}
+
+h2 {
+  font-family: "Outfit", sans-serif;
+  text-align: center;
+  font-size: 350%;
+}
+
+h3 {
+  color: #951279;
+  font-family: "Outfit", sans-serif;
+  font-size: 180%;
+  margin-bottom: 0px;
+  font-weight: bold;
+}
+
+h4 {
+  text-align: center;
+  font-family: "Outfit", sans-serif;
+  font-weight: 400;
+  font-size: 150%;
+}
+
+.submitButton {
+  background-color: #00ffff;
+  color: black;
+  box-shadow: -1px 1px 29px -1px #00ffff;
+  accent-color: #00ffff;
+  border: #00ffff 2px solid;
+  padding-inline: 35px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: large;
+}
+
+.WP-page {
+  padding-left: 100px;
+  font-family: "Inter", sans-serif;
+  font-size: 30px;
+}
+
+.WP-footer {
+  margin-top: 7.5rem;
+  font-size: 2rem;
+}
+
+.WP-li {
+  padding: 3px;
+}
+
+.WP-article {
+  margin-top: 70px;
+  font-size: 2rem;
+}
+
+.WP-p {
+  margin-top: 5px;
+  font-size: 2rem;
+}
+
+.WP-button {
+  float: right;
+  margin-right: 30px;
+}
+
+#WP-input {
+  width: 30px;
+  height: 30px;
+}
