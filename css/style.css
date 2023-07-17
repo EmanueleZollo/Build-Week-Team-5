@@ -1,0 +1,60 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;400;700&family=Outfit:wght@400;700&display=swap");
+
+/* font-family: 'Inter', sans-serif;
+font-family: 'Outfit', sans-serif; */
+
+/* #d20094 colore bottoni risposta */
+
+body {
+  background-image: url(../assets/bg.jpg);
+  margin: 0;
+  color: white;
+  background-repeat: no-repeat;
+}
+
+header {
+  text-align: start;
+  padding-top: 40px;
+  padding-left: 90px;
+}
+
+.logo {
+  width: 160px;
+}
+
+h1 {
+  font-family: "Outfit", sans-serif;
+  text-align: left;
+}
+
+h2 {
+  font-family: "Outfit", sans-serif;
+  text-align: center;
+  font-size: 350%;
+}
+
+h3 {
+  color: #7b116d;
+  font-family: "Outfit", sans-serif;
+}
+
+h4 {
+  text-align: center;
+  font-family: "Outfit", sans-serif;
+  font-weight: 400;
+  font-size: 150%;
+}
+
+.submitButton {
+  background-color: #00ffff;
+  color: black;
+  box-shadow: -1px 1px 29px -1px #00ffff;
+  accent-color: #00ffff;
+  border: #00ffff 2px solid;
+  padding-inline: 35px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: large;
+}
