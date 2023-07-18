@@ -410,3 +410,11 @@ const questions = [
     incorrect_answers: ["Mark Zuckerberg", "Marc Benioff", "Jack Dorsey"],
   },
 ];
+
+let score = 0;
+let questionNumber = 0;
+
+const createQuestion = function () {
+  if (questionNumber >= 10) {
+  }
+};
