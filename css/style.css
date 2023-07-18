@@ -128,7 +128,6 @@ h4 {
 }
 
 #asadiv {
-  margin-top: 10rem;
   margin-bottom: 5rem;
 }
 
@@ -162,6 +161,80 @@ footer p span {
   cursor: pointer;
 }
 
+#app {
+  margin-left: 85%;
+  margin-bottom: 4rem;
+  margin-top: 2rem;
+}
+
+.base-timer {
+  position: relative;
+  width: 160px;
+  height: 160px;
+}
+
+.base-timer__svg {
+  transform: scaleX(-1);
+}
+
+.base-timer__circle {
+  fill: none;
+  stroke: none;
+}
+
+.base-timer__path-elapsed {
+  stroke-width: 10px;
+  stroke: grey;
+}
+
+.base-timer__path-remaining {
+  stroke-width: 10px;
+  stroke-linecap: round;
+  transform: rotate(90deg);
+  transform-origin: center;
+  transition: 1s linear all;
+  fill-rule: nonzero;
+  stroke: currentColor;
+}
+
+.base-timer__path-remaining.green {
+  color: rgb(117, 0, 252);
+}
+
+.base-timer__path-remaining.orange {
+  color: orange;
+}
+
+.base-timer__path-remaining.red {
+  color: red;
+}
+
+.base-timer__label {
+  position: absolute;
+  width: 160px;
+  height: 160px;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  text-align: center;
+}
+
+.timer-wrapper {
+  text-align: center;
+}
+
+.timer-text-up {
+  font-size: 12px;
+}
+.timer-text-down {
+  font-size: 12px;
+}
+
+.timer-seconds {
+  font-size: 44px;
+}
 /* RESULTS PAGE STYLE */
 
 .results-title-container {
