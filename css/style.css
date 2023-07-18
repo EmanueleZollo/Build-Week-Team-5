@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;400;700&family=Outfit:wght@400;700&display=swap");
-
 /* font-family: 'Inter', sans-serif;
 font-family: 'Outfit', sans-serif; */
 
@@ -10,6 +9,7 @@ body {
   margin: 0;
   color: white;
   background-repeat: no-repeat;
+  background-size: 100%;
 }
 
 header {
@@ -24,7 +24,9 @@ header {
 
 h1 {
   font-family: "Outfit", sans-serif;
-  text-align: left;
+  font-size: 7rem;
+  margin-top: 80px;
+  line-height: 65px;
 }
 
 h2 {
@@ -34,8 +36,11 @@ h2 {
 }
 
 h3 {
-  color: #7b116d;
+  color: #951279;
   font-family: "Outfit", sans-serif;
+  font-size: 180%;
+  margin-bottom: 0px;
+  font-weight: bold;
 }
 
 h4 {
@@ -59,6 +64,87 @@ h4 {
   font-size: large;
 }
 
+/* WELCOME PAGE  STYLE*/
+.WP-page {
+  padding-left: 100px;
+  font-family: "Inter", sans-serif;
+  font-size: 30px;
+}
+
+.WP-footer {
+  margin-top: 7.5rem;
+  font-size: 2rem;
+}
+
+.WP-li {
+  padding: 3px;
+}
+
+.WP-article {
+  margin-top: 70px;
+  font-size: 2rem;
+}
+
+.WP-p {
+  margin-top: 5px;
+  font-size: 2rem;
+}
+
+.WP-button {
+  float: right;
+  margin-right: 30px;
+}
+
+#WP-input {
+  width: 30px;
+  height: 30px;
+}
+
+
+/* QUESTION PAGE STYLE */
+#answerPos{
+  text-align: center;
+}
+
+.answer {
+  border: 3px solid;
+  border-image-source: linear-gradient(to bottom, 55% #ffeeee, 45% transparent);
+  border-radius: 45px;
+  width: 30rem;
+  margin: 15px;
+  display: inline-block
+}
+
+.answer p {
+  text-align: center;
+  margin: 25px auto;
+}
+
+#questionPageTitle {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 400;
+}
+
+#asadiv {
+  margin-top: 10rem;
+}
+
+#questionCount {
+  text-align: center;
+  margin-top: 6rem;
+  position: fixed;
+  bottom: 20px;
+  left: 45%;
+  letter-spacing: 3px;
+
+}
+
+footer p span {
+  color:#d20094;
+}
+
+/* RESULTS PAGE STYLE */
+ 
 .results-title-container {
   margin-top: 30px;
 }
@@ -147,4 +233,27 @@ h4 {
   font-weight: 700;
   font-size: 1.8rem;
   cursor: pointer;
+}
+
+/* FEEDBACK PAGE STYLE */
+ 
+#starRate {
+  text-align: center;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+#comment {
+  display: block;
+  margin: 40px auto;
+  border: none;
+  border-bottom: #d20094 1px solid;
+  width: 60%;
+  background-color: transparent;
+  
+}
+
+#centralPark {
+  text-align: center;
+  margin-top: 3rem;
 }
