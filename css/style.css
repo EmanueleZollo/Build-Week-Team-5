@@ -10,6 +10,7 @@ body {
   color: white;
   background-repeat: no-repeat;
   background-size: cover;
+  font-family: "Inter", sans-serif;
 }
 
 header {
@@ -159,10 +160,6 @@ h4 {
   letter-spacing: 3px;
 }
 
-footer p span {
-  color: #d20094;
-}
-
 .next-button-container {
   text-align: right;
   padding-right: 90px;
@@ -263,6 +260,16 @@ footer p span {
 .timer-seconds {
   font-size: 57px;
 }
+
+p span {
+  color: #d20094;
+}
+
+#questFooter {
+  text-align: center;
+  font-size: x-large;
+}
+
 /* RESULTS PAGE STYLE */
 
 .results-title-container {
