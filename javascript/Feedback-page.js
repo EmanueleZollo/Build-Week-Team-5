@@ -1,29 +1,29 @@
 // VOTO CON SELEZIONE DELLE STELLE - BLOCCO DEL TASTO "MORE INFO"
-const  fixBlackStar = document.getElementById("starRate");
+// const  fixBlackStar = document.getElementById("starRate");
 
-for (let i = 0; i < 10; i++) {
-   fixBlackStar.innerHTML +=          
-//    `<i class="fas fa-star"> </i>`
- `<img src="./assets/star.svg" class="fa-star" alt="Stelle">`
-}
-
-//  const mouseOver = function() {
-//   starSelect.style.color = "red";
+// for (let i = 0; i < 10; i++) {
+//    fixBlackStar.innerHTML +=          
+// //    `<i class="fas fa-star"> </i>`
+//  `<img src="./assets/star.svg" class="fa-star" alt="Stelle">`
 // }
 
-//  const mouseOut  = function() {
-//   starSelect.style.color = "black";
-// }
-const starSelectColorChange = document.getElementsByClassName ("fa-star")
+// //  const mouseOver = function() {
+// //   starSelect.style.color = "red";
+// // }
 
-const fixBlueStar  = function() {
-    for (let i = 0; i < 10; i++) {
+// //  const mouseOut  = function() {
+// //   starSelect.style.color = "black";
+// // }
+// const starSelectColorChange = document.getElementsByClassName ("fa-star")
+
+// const fixBlueStar  = function() {
+//     for (let i = 0; i < 10; i++) {
     
-    return starSelectColorChange.classList.add( "starColorChange")  
-    }
-}
+//     return starSelectColorChange.classList.add( "starColorChange")  
+//     }
+// }
    
-starSelectColorChange.addEventListener("click", fixBlueStar)
+// starSelectColorChange.addEventListener("click", fixBlueStar)
 
 
 // starSelect.addEventListener("mouseover", mouseOver);

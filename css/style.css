@@ -69,6 +69,7 @@ h4 {
   font-family: "Inter", sans-serif;
   font-weight: 700;
   font-size: large;
+  cursor: pointer;
 }
 
 .linky {
@@ -112,15 +113,6 @@ h4 {
 }
 
 /* QUESTION PAGE STYLE */
-
-.bg-red {
-  background-color: red;
-}
-
-.bg-green {
-  background-color: green;
-}
-
 .answerPos {
   text-align: center;
   margin-bottom: 150px;
@@ -186,15 +178,13 @@ footer p span {
 #app {
   margin-left: 85%;
   margin-bottom: 4rem;
-  margin-top: 3rem;
-  font-family: "Inter";
-  font-weight: 700;
+  margin-top: 2rem;
 }
 
 .base-timer {
   position: relative;
-  width: 140px;
-  height: 140px;
+  width: 160px;
+  height: 160px;
 }
 
 .base-timer__svg {
@@ -235,8 +225,8 @@ footer p span {
 
 .base-timer__label {
   position: absolute;
-  width: 140px;
-  height: 140px;
+  width: 160px;
+  height: 160px;
   top: 0;
   display: flex;
   align-items: center;
@@ -251,17 +241,13 @@ footer p span {
 
 .timer-text-up {
   font-size: 12px;
-  position: relative;
-  top: 12px;
 }
 .timer-text-down {
   font-size: 12px;
-  position: relative;
-  bottom: 23px;
 }
 
 .timer-seconds {
-  font-size: 57px;
+  font-size: 44px;
 }
 /* RESULTS PAGE STYLE */
 
@@ -366,7 +352,7 @@ footer p span {
 
 .fa-star {
   font-size: xxx-large;
-  background-color: black;
+  color: black;
 }
 
 .starColorChange {
@@ -389,7 +375,5 @@ footer p span {
 }
 
 .linky {
-  display: block;
-  width: 100%;
   text-decoration: none;
 }
