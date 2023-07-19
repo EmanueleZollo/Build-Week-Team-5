@@ -336,6 +336,10 @@ footer p span {
   margin-bottom: 3rem;
 }
 
+.fa-star {
+  font-size: xxx-large
+}
+
 #comment {
   display: block;
   margin: 40px auto;
@@ -343,9 +347,16 @@ footer p span {
   border-bottom: #d20094 1px solid;
   width: 60%;
   background-color: transparent;
+  color: white;
 }
 
 #centralPark {
   text-align: center;
   margin-top: 3rem;
+}
+
+.linky {
+  display: block;
+  width: 100%;
+  text-decoration: none;
 }
