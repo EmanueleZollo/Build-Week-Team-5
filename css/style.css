@@ -116,7 +116,6 @@ h4 {
 }
 
 .answer {
-  border: 3px solid white;
   border-radius: 45px;
   width: 30rem;
   display: inline-block;
@@ -125,6 +124,11 @@ h4 {
   margin: 25px;
   padding: 25px;
   font-size: large;
+  color: white;
+  background: linear-gradient(gray, transparent) padding-box,
+    linear-gradient(to bottom, white, rgba(153, 50, 204, 0.274)) border-box;
+  border-radius: 50em;
+  border: 4px solid transparent;
 }
 
 #questionPageTitle {
