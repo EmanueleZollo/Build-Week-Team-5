@@ -522,10 +522,12 @@ function setCircleDasharray() {
 const questionElement = document.getElementById("question");
 const answersButton = document.getElementById("answerButtonsJs");
 const nextButton = document.getElementById("next");
+const alpha = document.getElementById("alpha");
 
-nextButton.addEventListener("click", startQuiz);
+/*nextButton.addEventListener("click", startQuiz);*/
+nextButton.addEventListener("click", showNextQuestion);
 
-let currentQuestionI = 0;
+let currentQuestionI = -1;
 let score = 0;
 let answered = false;
 
@@ -547,7 +549,7 @@ function showQuestion() {
   let answers = currentQuestion.incorrect_answers.concat(currentQuestion.correct_answer);
   randomQuestions(answers);
 
-  answers.forEach(answer => {
+  answers.forEach((answer) => {
     const button = document.createElement("button");
     button.innerHTML = answer;
     button.classList.add("answer");
@@ -557,20 +559,23 @@ function showQuestion() {
 }
 
 function selectAnswer(event) {
+  if (answered) return;
+  answered = true;
+
   const selectedAnswer = event.target.innerHTML;
   const correctAnswer = questions[currentQuestionI].correct_answer;
 
   if (selectedAnswer === correctAnswer) {
     score++;
+    /*answerButtons.classList.add("bg-green");*/
     console.log("Risposta corretta!");
   } else {
     console.log("Risposta errata.");
   }
-  nextButton.style.display = "block";
+  /*nextButton.style.display = "block";*/
 
   const answerButtons = document.querySelectorAll(".btn");
-  answerButtons.forEach(button => (button.disabled = true));
-  showNextQuestion();
+  answerButtons.forEach((button) => (button.disabled = true));
   console.log(score);
 }
 
@@ -578,7 +583,7 @@ function showNextQuestion() {
   currentQuestionI++;
   answered = false;
   document.getElementById("question-container").innerHTML = "";
-  nextButton.style.display = "none";
+  /*nextButton.style.display = "none";*/
   if (currentQuestionI < questions.length) {
     showQuestion();
     resetTimer();
@@ -594,7 +599,7 @@ function randomQuestions(array) {
 }
 
 function resetBtn() {
-  nextButton.style.display = "none";
+  /*nextButton.style.display = "none";*/
   const answersButtonChildren = answersButton.children;
   const numberOfChildren = answersButtonChildren.length;
 

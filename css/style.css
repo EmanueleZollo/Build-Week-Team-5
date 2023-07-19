@@ -112,6 +112,15 @@ h4 {
 }
 
 /* QUESTION PAGE STYLE */
+
+.bg-red {
+  background-color: red;
+}
+
+.bg-green {
+  background-color: green;
+}
+
 .answerPos {
   text-align: center;
   margin-bottom: 150px;
