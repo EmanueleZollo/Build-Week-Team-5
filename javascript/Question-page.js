@@ -411,6 +411,8 @@ const questions = [
   },
 ];
 
+//TIMER
+
 const FULL_DASH_ARRAY = 283;
 const WARNING_THRESHOLD = 10;
 const ALERT_THRESHOLD = 5;
@@ -429,7 +431,7 @@ const COLOR_CODES = {
   },
 };
 
-const TIME_LIMIT = 30;
+const TIME_LIMIT = 15;
 let timePassed = 0;
 let timeLeft = TIME_LIMIT;
 let timerInterval = null;
@@ -470,9 +472,9 @@ function startTimer() {
     document.getElementById("base-timer-label").innerHTML = formatTime(timeLeft);
     setCircleDasharray();
     setRemainingPathColor(timeLeft);
-
     if (timeLeft === 0) {
-      onTimesUp();
+      clearInterval(timerInterval);
+      handleTimesUp();
     }
   }, 1000);
 }
@@ -532,6 +534,8 @@ function startQuiz() {
   score = 0;
   nextButton.innerHTML = "Next";
   showQuestion();
+  resetTimer();
+  setRemainingPathColor(TIME_LIMIT);
 }
 
 function showQuestion() {
@@ -543,7 +547,7 @@ function showQuestion() {
   let answers = currentQuestion.incorrect_answers.concat(currentQuestion.correct_answer);
   randomQuestions(answers);
 
-  answers.forEach((answer) => {
+  answers.forEach(answer => {
     const button = document.createElement("button");
     button.innerHTML = answer;
     button.classList.add("answer");
@@ -565,7 +569,7 @@ function selectAnswer(event) {
   nextButton.style.display = "block";
 
   const answerButtons = document.querySelectorAll(".btn");
-  answerButtons.forEach((button) => (button.disabled = true));
+  answerButtons.forEach(button => (button.disabled = true));
   showNextQuestion();
   console.log(score);
 }
@@ -577,6 +581,7 @@ function showNextQuestion() {
   nextButton.style.display = "none";
   if (currentQuestionI < questions.length) {
     showQuestion();
+    resetTimer();
   } else {
   }
 }
@@ -595,5 +600,43 @@ function resetBtn() {
 
   for (let i = 0; i < numberOfChildren; i++) {
     answersButton.removeChild(answersButtonChildren[0]);
+  }
+}
+
+// DOMANDA SUCCESSIVA ALLO SCADERE DEL TIMER
+
+function resetTimer() {
+  timePassed = 0;
+  timeLeft = TIME_LIMIT;
+  clearInterval(timerInterval);
+  setCircleDasharray();
+  setRemainingPathColor(timeLeft);
+  startTimer();
+}
+
+function setRemainingPathColor(timeLeft) {
+  const { alert, warning, info } = COLOR_CODES;
+  if (timeLeft <= alert.threshold) {
+    remainingPathColor = alert.color;
+  } else if (timeLeft <= warning.threshold) {
+    remainingPathColor = warning.color;
+  } else {
+    remainingPathColor = info.color;
+  }
+
+  document.getElementById("base-timer-path-remaining").classList.remove(alert.color, warning.color, info.color);
+  document.getElementById("base-timer-path-remaining").classList.add(remainingPathColor);
+}
+
+function handleTimesUp() {
+  onTimesUp();
+  showNextQuestion();
+}
+
+function onTimesUp() {
+  if (currentQuestionI === questions.length) {
+    window.location.href = "./Results-page.html";
+  } else {
+    showNextQuestion();
   }
 }
