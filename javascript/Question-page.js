@@ -521,9 +521,10 @@ const questionElement = document.getElementById("question");
 const answersButton = document.getElementById("answerButtonsJs");
 const nextButton = document.getElementById("next");
 
-nextButton.addEventListener("click", startQuiz);
+/*nextButton.addEventListener("click", startQuiz);*/
+nextButton.addEventListener("click", showNextQuestion);
 
-let currentQuestionI = 0;
+let currentQuestionI = -1;
 let score = 0;
 let answered = false;
 
@@ -553,6 +554,9 @@ function showQuestion() {
 }
 
 function selectAnswer(event) {
+  if (answered) return;
+  answered = true;
+
   const selectedAnswer = event.target.innerHTML;
   const correctAnswer = questions[currentQuestionI].correct_answer;
 
@@ -566,7 +570,6 @@ function selectAnswer(event) {
 
   const answerButtons = document.querySelectorAll(".btn");
   answerButtons.forEach((button) => (button.disabled = true));
-  showNextQuestion();
   console.log(score);
 }
 
