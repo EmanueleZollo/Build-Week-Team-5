@@ -351,6 +351,11 @@ footer p span {
 
 .fa-star {
   font-size: xxx-large;
+  background-color: black;
+}
+
+.starColorChange {
+  color: #00ffff;
 }
 
 #comment {

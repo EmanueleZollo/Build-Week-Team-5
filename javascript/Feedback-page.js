@@ -1,3 +1,57 @@
+// VOTO CON SELEZIONE DELLE STELLE - BLOCCO DEL TASTO "MORE INFO"
+const  fixBlackStar = document.getElementById("starRate");
+
+for (let i = 0; i < 10; i++) {
+   fixBlackStar.innerHTML +=          
+//    `<i class="fas fa-star"> </i>`
+ `<img src="./assets/star.svg" class="fa-star" alt="Stelle">`
+}
+
+//  const mouseOver = function() {
+//   starSelect.style.color = "red";
+// }
+
+//  const mouseOut  = function() {
+//   starSelect.style.color = "black";
+// }
+const starSelectColorChange = document.getElementsByClassName ("fa-star")
+
+const fixBlueStar  = function() {
+    for (let i = 0; i < 10; i++) {
+    
+    return starSelectColorChange.classList.add( "starColorChange")  
+    }
+}
+   
+starSelectColorChange.addEventListener("click", fixBlueStar)
+
+
+// starSelect.addEventListener("mouseover", mouseOver);
+
+// starSelect.addEventListener("mouseout", mouseOut);
+
+// starSelect.addEventListener("click", fixBlueStar);
+
+
+
+// L'UTENTE DEVE SCRIVERE SUL COMMENTO PRIMA DI RICHIEDERE PIU' INFORMAZIONI
+
+let inputRequired = document.getElementById("comment");
+
+const inputBlock = function () {
+    if (inputRequired.value.length > 10) {
+        websiteButton.addEventListener("click", websiteLink)
+   } 
+// else {
+//     alert("you have to fill out the comment line with at least 11 characters - scrivi un commento di almeno 11 caratteri")
+//    }
+ }
+
+inputRequired.addEventListener("change",inputBlock);
+
+
+// LINK DI COLLEGAMENTO AL SITO EPICODE - BUTTON "MORE INFO"
+
 const websiteButton = document.querySelector(".submitButton")
 const newLink = document.querySelector("a")
 
@@ -7,18 +61,7 @@ newLink.setAttribute ("href", "https://epicode.com/it/?utm_source=adwords&utm_ca
 return websiteButton.appendChild(newLink)
 }
 
-let inputRequired = document.getElementById("comment");
 
-const inputBlock = function () {
-    inputRequired.setAttribute ("minlength", "10")
-    if (inputRequired.value.lenght > 10) {
-        websiteButton.addEventListener("click", websiteLink)
-   } 
-// else {
-//     alert("you have to fill out the comment line with at least 11 characters - scrivi un commento di almeno 11 caratteri")
-//    }
- }
 
-inputRequired.addEventListener("change",inputBlock);
 
 
