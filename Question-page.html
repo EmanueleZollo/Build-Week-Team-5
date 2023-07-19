@@ -14,7 +14,7 @@
       <div></div>
     </header>
 
-    <main>
+    <!--<main>
       <div id="app"></div>
       <div id="asadiv">
         <h2 id="questions-title"><span class="questionPageTitle">How can I create a </span> <br />checkbox in HTML?</h2>
@@ -33,9 +33,22 @@
         <div class="answer">
           <p>Risposta 4</p>
         </div>
+      </section> -->
+
+    <main>
+      <div id="app" class="container"></div>
+      <div class="asadiv" id="question-container"></div>
+      <div id="question" class="titleQuestion">How can I create a checkbox in HTML?</div>
+
+      <section class="answerPos" id="answerButtonsJs">
+        <button class="answer" id="answerButtonsJs">Answer1</button>
+        <button class="answer" id="answerButtonsJs">Answer2</button>
+        <button class="answer" id="answerButtonsJs">Answer3</button>
+        <button class="answer" id="answerButtonsJs">Answer4</button>
       </section>
-      <div class="next-button-container">
-        <button class="next-button">NEXT</button>
+
+      <div class="next-button-container controls">
+        <button id="next" class="next-button btnNext">NEXT</button>
       </div>
       <footer id="questionCount">
         <p>QUESTION 1 <span>/10</span></p>

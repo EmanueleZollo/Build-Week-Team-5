@@ -513,3 +513,87 @@ function setCircleDasharray() {
   const circleDasharray = `${(calculateTimeFraction() * FULL_DASH_ARRAY).toFixed(0)} 283`;
   document.getElementById("base-timer-path-remaining").setAttribute("stroke-dasharray", circleDasharray);
 }
+
+// start QUIZ
+
+/*const startButton = document.getElementById("start");*/
+const questionElement = document.getElementById("question");
+const answersButton = document.getElementById("answerButtonsJs");
+const nextButton = document.getElementById("next");
+
+nextButton.addEventListener("click", startQuiz);
+
+let currentQuestionI = 0;
+let score = 0;
+let answered = false;
+
+function startQuiz() {
+  currentQuestionI = 0;
+  score = 0;
+  nextButton.innerHTML = "Next";
+  showQuestion();
+}
+
+function showQuestion() {
+  resetBtn();
+  let currentQuestion = questions[currentQuestionI];
+  let questionNum = currentQuestionI + 1;
+  questionElement.innerHTML = " Domanda num. " + questionNum + ": " + currentQuestion.question;
+
+  let answers = currentQuestion.incorrect_answers.concat(currentQuestion.correct_answer);
+  randomQuestions(answers);
+
+  answers.forEach((answer) => {
+    const button = document.createElement("button");
+    button.innerHTML = answer;
+    button.classList.add("answer");
+    answersButton.appendChild(button);
+    button.addEventListener("click", selectAnswer);
+  });
+}
+
+function selectAnswer(event) {
+  const selectedAnswer = event.target.innerHTML;
+  const correctAnswer = questions[currentQuestionI].correct_answer;
+
+  if (selectedAnswer === correctAnswer) {
+    score++;
+    console.log("Risposta corretta!");
+  } else {
+    console.log("Risposta errata.");
+  }
+  nextButton.style.display = "block";
+
+  const answerButtons = document.querySelectorAll(".btn");
+  answerButtons.forEach((button) => (button.disabled = true));
+  showNextQuestion();
+  console.log(score);
+}
+
+function showNextQuestion() {
+  currentQuestionI++;
+  answered = false;
+  document.getElementById("question-container").innerHTML = "";
+  nextButton.style.display = "none";
+  if (currentQuestionI < questions.length) {
+    showQuestion();
+  } else {
+  }
+}
+
+function randomQuestions(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+}
+
+function resetBtn() {
+  nextButton.style.display = "none";
+  const answersButtonChildren = answersButton.children;
+  const numberOfChildren = answersButtonChildren.length;
+
+  for (let i = 0; i < numberOfChildren; i++) {
+    answersButton.removeChild(answersButtonChildren[0]);
+  }
+}

@@ -35,6 +35,13 @@ h2 {
   font-size: 350%;
 }
 
+.titleQuestion {
+  font-family: "Outfit", sans-serif;
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 40px;
+}
+
 h3 {
   color: #951279;
   font-family: "Outfit", sans-serif;
@@ -101,7 +108,7 @@ h4 {
 }
 
 /* QUESTION PAGE STYLE */
-#answerPos {
+.answerPos {
   text-align: center;
   margin-bottom: 150px;
   width: 70%;
@@ -112,14 +119,12 @@ h4 {
   border: 3px solid white;
   border-radius: 45px;
   width: 30rem;
-  margin: 15px;
   display: inline-block;
   cursor: pointer;
-}
-
-.answer p {
   text-align: center;
-  margin: 25px auto;
+  margin: 25px;
+  padding: 25px;
+  font-size: large;
 }
 
 #questionPageTitle {
@@ -127,7 +132,7 @@ h4 {
   font-weight: 400;
 }
 
-#asadiv {
+.asadiv {
   margin-bottom: 5rem;
 }
 
@@ -337,7 +342,7 @@ footer p span {
 }
 
 .fa-star {
-  font-size: xxx-large
+  font-size: xxx-large;
 }
 
 #comment {
