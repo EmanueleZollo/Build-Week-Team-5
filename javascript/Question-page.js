@@ -41,7 +41,7 @@ const questions = [
     correct_answer: "Final",
     incorrect_answers: ["Static", "Private", "Public"],
   },
-  {
+  /*{
     category: "Science: Computers",
     type: "multiple",
     difficulty: "medium",
@@ -408,7 +408,7 @@ const questions = [
     question: "Who is the founder of Palantir?",
     correct_answer: "Peter Thiel",
     incorrect_answers: ["Mark Zuckerberg", "Marc Benioff", "Jack Dorsey"],
-  },
+  },*/
 ];
 
 //TIMER
@@ -522,13 +522,13 @@ function setCircleDasharray() {
 const questionElement = document.getElementById("question");
 const answersButton = document.getElementById("answerButtonsJs");
 const nextButton = document.getElementById("next");
-const alpha = document.getElementById("alpha");
 
 /*nextButton.addEventListener("click", startQuiz);*/
 nextButton.addEventListener("click", showNextQuestion);
 
 let currentQuestionI = -1;
 let score = 0;
+let scoreX = 0;
 let answered = false;
 
 function startQuiz() {
@@ -567,12 +567,13 @@ function selectAnswer(event) {
 
   if (selectedAnswer === correctAnswer) {
     score++;
-    /*answerButtons.classList.add("bg-green");*/
+    /*answersButton.classList.add("bg-green");*/
     console.log("Risposta corretta!");
   } else {
     console.log("Risposta errata.");
+    /*answersButton.classList.add("bg-red");*/
   }
-  /*nextButton.style.display = "block";*/
+  nextButton.style.display = "inline-block";
 
   const answerButtons = document.querySelectorAll(".btn");
   answerButtons.forEach((button) => (button.disabled = true));
@@ -583,11 +584,14 @@ function showNextQuestion() {
   currentQuestionI++;
   answered = false;
   document.getElementById("question-container").innerHTML = "";
-  /*nextButton.style.display = "none";*/
+  nextButton.style.display = "none";
   if (currentQuestionI < questions.length) {
     showQuestion();
     resetTimer();
   } else {
+    scoreX = score;
+    console.log(scoreX);
+    window.location.href = "./Results-page.html";
   }
 }
 
@@ -599,7 +603,7 @@ function randomQuestions(array) {
 }
 
 function resetBtn() {
-  /*nextButton.style.display = "none";*/
+  nextButton.style.display = "none";
   const answersButtonChildren = answersButton.children;
   const numberOfChildren = answersButtonChildren.length;
 
@@ -645,3 +649,10 @@ function onTimesUp() {
     showNextQuestion();
   }
 }
+
+// RESULT PAGE
+
+localStorage.setItem("scoreX", scoreX);
+
+/*const resScore = document.getElementById("resultScore");
+resScore.innerText = scoreX;*/
