@@ -520,6 +520,7 @@ function setCircleDasharray() {
 const questionElement = document.getElementById("question");
 const answersButton = document.getElementById("answerButtonsJs");
 const nextButton = document.getElementById("next");
+const alpha = document.getElementById("alpha");
 
 /*nextButton.addEventListener("click", startQuiz);*/
 nextButton.addEventListener("click", showNextQuestion);
@@ -562,11 +563,12 @@ function selectAnswer(event) {
 
   if (selectedAnswer === correctAnswer) {
     score++;
+    /*answerButtons.classList.add("bg-green");*/
     console.log("Risposta corretta!");
   } else {
     console.log("Risposta errata.");
   }
-  nextButton.style.display = "block";
+  /*nextButton.style.display = "block";*/
 
   const answerButtons = document.querySelectorAll(".btn");
   answerButtons.forEach((button) => (button.disabled = true));
@@ -577,7 +579,7 @@ function showNextQuestion() {
   currentQuestionI++;
   answered = false;
   document.getElementById("question-container").innerHTML = "";
-  nextButton.style.display = "none";
+  /*nextButton.style.display = "none";*/
   if (currentQuestionI < questions.length) {
     showQuestion();
   } else {
@@ -592,7 +594,7 @@ function randomQuestions(array) {
 }
 
 function resetBtn() {
-  nextButton.style.display = "none";
+  /*nextButton.style.display = "none";*/
   const answersButtonChildren = answersButton.children;
   const numberOfChildren = answersButtonChildren.length;
 
