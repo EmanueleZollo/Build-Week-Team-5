@@ -129,10 +129,11 @@ h4 {
   padding: 25px;
   font-size: large;
   color: white;
-  background: linear-gradient(gray, transparent) padding-box,
-    linear-gradient(to bottom, white, rgba(153, 50, 204, 0.274)) border-box;
-  border-radius: 50em;
-  border: 4px solid transparent;
+  background: rgba(255, 255, 255, 0.1);
+  border-top: 4px white inset;
+  border-bottom: 4px rgba(255, 255, 255, 0.322) inset;
+  border-right: 4px rgba(255, 255, 255, 0.322) inset;
+  border-left: 4px white inset;
 }
 
 #questionPageTitle {
