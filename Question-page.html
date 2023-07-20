@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="./css/style.css" />
     <title>Benchmark page</title>
   </head>
-  <body id="Svuota">
+  <body onload="startQuiz()" id="Svuota">
     <header>
       <img class="logo" src="./assets/epicode_logo.png" alt="logo EPICODE" />
       <div></div>
@@ -17,19 +17,14 @@
     <main>
       <div id="app" class="container"></div>
       <div class="asadiv" id="question-container"></div>
-      <div id="question" class="titleQuestion">Here the next question</div>
+      <div id="question" class="titleQuestion"></div>
 
-      <section class="answerPos" id="answerButtonsJs">
-        <button class="answer" id="alpha">Here the Answer 1</button>
-        <button class="answer" id="alpha">Here the Answer 2</button>
-        <button class="answer" id="alpha">Here the Answer 3</button>
-        <button class="answer" id="alpha">Here the Answer 4</button>
-      </section>
+      <section class="answerPos" id="answerButtonsJs"></section>
 
       <p id="questFooter"></p>
       <footer id="questionCount">
         <div class="next-button-container controls">
-          <button id="next" class="next-button">NEXT</button>
+          <button id="next" class="next-button" style="display: none">NEXT</button>
         </div>
       </footer>
     </main>
