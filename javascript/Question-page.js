@@ -596,8 +596,47 @@ function showNextQuestion() {
   } else {
     scoreX = score;
     console.log(scoreX);
-    window.location.href = "./Results-page.html";
+    svuota();
   }
+}
+
+function correct() {
+  document.getElementById("resultScore").innerHTML =
+    "Correct <br>" + (scoreX / 5) * 100 + "% <br>" + scoreX + "/5 questions";
+  document.getElementById("wrong").innerHTML =
+    "Wrong <br>" + (100 - (scoreX / 5) * 100) + "% <br>" + (5 - scoreX) + "/5 questions";
+}
+
+function svuota() {
+  document.getElementById("Svuota").innerHTML = `
+  <main>
+    <header>
+      <img class="logo" src="./assets/epicode_logo.png" alt="logo-EPICODE" />
+    </header>
+    <div class="results-title-container">
+      <h2>Results</h2>
+      <h4>The summary of your answers:</h4>
+    </div>
+    <section class="results-section-container">
+      <div class="results-left-container">
+        <h2 class="correct-wrong" id="resultScore">Correct<br /><strong class="percentage">%</strong></h2>
+        <p class="right-answers"></p>
+      </div>
+      <div class="results-central-container">
+        <h5>Congratulations!<span>You passed the exam.</span></h5>
+        <p>We'll send you the certificate in a few minutes. Check your email (including promotions / spam folder)</p>
+      </div>
+      <div class="results-right-container">
+        <h2 class="correct-wrong" id="wrong">Wrong<br /><strong class="percentage">%</strong></h2>
+        <p class="wrong-answers"></p>
+      </div>
+    </section>
+    <footer class="results-footer">
+      <button class="results-button"><a>RATE US</a></button>
+    </footer>
+  </main>
+`;
+  correct();
 }
 
 function randomQuestions(array) {
