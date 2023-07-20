@@ -377,11 +377,13 @@ p span {
 #comment {
   display: block;
   margin: 40px auto;
+  outline: none;
   border: none;
   border-bottom: #d20094 1px solid;
   width: 60%;
   background-color: transparent;
   color: white;
+  padding-inline: 30px;
 }
 
 #centralPark {
