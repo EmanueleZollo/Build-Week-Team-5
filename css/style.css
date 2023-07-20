@@ -266,13 +266,14 @@ p span {
 
 .results-title-container {
   margin-top: 30px;
+  margin-bottom: 50px;
 }
 
 .results-section-container {
   padding-inline: 90px;
   height: 40rem;
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 100px;
 }
 
 .results-title-container h2 {
@@ -292,7 +293,6 @@ p span {
   width: 20%;
   display: inline-block;
   vertical-align: middle;
-  padding-top: 200px;
 }
 
 .results-right-container {
@@ -300,7 +300,6 @@ p span {
   width: 20%;
   display: inline-block;
   vertical-align: middle;
-  padding-top: 200px;
   opacity: 0.6;
 }
 
@@ -329,11 +328,9 @@ p span {
 
 .results-central-container {
   display: inline-block;
-  width: 20%;
-  margin-inline: 10%;
-  padding-inline: 65px;
+  width: 40%;
+  margin-inline: 5%;
   vertical-align: middle;
-  padding-top: 200px;
 }
 
 .results-footer {
