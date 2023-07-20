@@ -117,7 +117,7 @@ h4 {
 .answerPos {
   text-align: center;
   margin-bottom: 150px;
-  width: 70%;
+  width: 80%;
   margin-inline: auto;
 }
 
@@ -276,10 +276,8 @@ p span {
 }
 
 .results-section-container {
-  padding-inline: 90px;
   height: 40rem;
   text-align: center;
-  margin-bottom: 100px;
 }
 
 .results-title-container h2 {
@@ -334,7 +332,7 @@ p span {
 
 .results-central-container {
   display: inline-block;
-  width: 40%;
+  width: 45%;
   margin-inline: 5%;
   vertical-align: middle;
 }

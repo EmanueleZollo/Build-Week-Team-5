@@ -653,7 +653,7 @@ function svuota() {
           <p class="right-answers"></p>
         </div>
         <div class="results-central-container">
-        <canvas id="myDonutChart" width="600" height="600"></canvas>
+        <canvas id="myDonutChart" width="500px" height="500px"></canvas>
         </div>
         <div class="results-right-container">
           <h2 class="correct-wrong" id="wrong">Wrong<br /><strong class="percentage">%</strong></h2>
@@ -740,7 +740,7 @@ const drawChart = function () {
   const canvasWidth = canvas.width;
   const canvasHeight = canvas.height;
 
-  const radius = Math.min(canvasWidth, canvasHeight) / 2.3;
+  const radius = Math.min(canvasWidth, canvasHeight) / 2;
 
   const centerX = canvasWidth / 2;
   const centerY = canvasHeight / 2;
