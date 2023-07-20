@@ -175,13 +175,15 @@ h4 {
 #app {
   margin-left: 85%;
   margin-bottom: 4rem;
-  margin-top: 2rem;
+  margin-top: 3rem;
+  font-family: "Inter";
+  font-weight: 700;
 }
 
 .base-timer {
   position: relative;
-  width: 160px;
-  height: 160px;
+  width: 140px;
+  height: 140px;
 }
 
 .base-timer__svg {
@@ -222,8 +224,8 @@ h4 {
 
 .base-timer__label {
   position: absolute;
-  width: 160px;
-  height: 160px;
+  width: 140px;
+  height: 140px;
   top: 0;
   display: flex;
   align-items: center;
@@ -238,13 +240,17 @@ h4 {
 
 .timer-text-up {
   font-size: 12px;
+  position: relative;
+  top: 12px;
 }
 .timer-text-down {
   font-size: 12px;
+  position: relative;
+  bottom: 23px;
 }
 
 .timer-seconds {
-  font-size: 44px;
+  font-size: 57px;
 }
 
 p span {
@@ -260,13 +266,14 @@ p span {
 
 .results-title-container {
   margin-top: 30px;
+  margin-bottom: 50px;
 }
 
 .results-section-container {
   padding-inline: 90px;
   height: 40rem;
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 100px;
 }
 
 .results-title-container h2 {
@@ -286,7 +293,6 @@ p span {
   width: 20%;
   display: inline-block;
   vertical-align: middle;
-  padding-top: 200px;
 }
 
 .results-right-container {
@@ -294,7 +300,6 @@ p span {
   width: 20%;
   display: inline-block;
   vertical-align: middle;
-  padding-top: 200px;
   opacity: 0.6;
 }
 
@@ -323,11 +328,9 @@ p span {
 
 .results-central-container {
   display: inline-block;
-  width: 20%;
-  margin-inline: 10%;
-  padding-inline: 65px;
+  width: 40%;
+  margin-inline: 5%;
   vertical-align: middle;
-  padding-top: 200px;
 }
 
 .results-footer {
