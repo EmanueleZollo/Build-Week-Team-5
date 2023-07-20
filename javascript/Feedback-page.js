@@ -1,7 +1,8 @@
 // VOTO CON SELEZIONE DELLE STELLE - BLOCCO DEL TASTO "MORE INFO"
 const  fixBlackStar = document.getElementById("starRate");
 const starsArray = [];
-const singleStar = `<img src="./assets/star.svg" class="fa-star" alt="Stelle">`
+const coloredArr = [];
+const singleStar = `<img src="./assets/star.svg" alt="Stelle">`
 
 for (let i = 0; i < 10; i++) {
     starsArray.push(singleStar)
@@ -13,9 +14,49 @@ for (let i = 0; i < starsArray.length; i++) {
  //    `<i class="fas fa-star"> </i>`
  }
 
- singleStar.addEventListener("click", fixBlueStar)
+ let usefulIndex = 0;
+
+ const classToggle = function () {
+    img.classList.toggle("spyIndex")
+    for (let i = 0; i < starsArray.length; i++) {
+         usefulIndex = starsArray[i].findIndex(element => element.includes("classToggle"))
+         for (let j = 0; j < usefulIndex; j++) {
+            coloredArr.push(`<img src="./assets/bluestar.svg" alt="StelleBlu">`)
+ }
+} 
+return coloredArr
+}
+
+const img = fixBlackStar.getAttribute("alt")
+// const img = document.getElementsByTagName("img")
 
 
+ img.addEventListener("click", classToggle)
+    
+ toggle();
+
+ 
+    
+    
+
+ 
+//  let coloredArr = [];
+//  const starSelectColorChange = document.getElementsByClassName ("fa-star")
+ 
+//  starSelectColorChange.addEventListener("click", onClick)
+
+//  function onClick(){
+//     let i = 0
+//      console.log(starsArray[i])
+//      newArr.push(coloredArr[i])
+//      if(i<newArr.length){
+//          ++i
+//      }
+//      for (let j = 0; j < coloredArr.length; j++) {
+        
+//         starSelectColorChange.classList.add( "starColorChange")  
+//      }
+//  };
 //  const mouseOver = function() {
 //   starSelect.style.color = "red";
 // }
@@ -23,16 +64,16 @@ for (let i = 0; i < starsArray.length; i++) {
 //  const mouseOut  = function() {
 //   starSelect.style.color = "black";
 // }
-const starSelectColorChange = document.getElementsByClassName ("fa-star")
+// const starSelectColorChange = document.getElementsByClassName ("fa-star")
 
-const fixBlueStar  = function() {
-    for (let i = 0; i < 10; i++) {
+// const fixBlueStar  = function() {
+//     for (let i = 0; i < 10; i++) {
     
-    return starSelectColorChange.classList.add( "starColorChange")  
-    }
-}
+//     return starSelectColorChange.classList.add( "starColorChange")  
+//     }
+// }
    
-starSelectColorChange.addEventListener("click", fixBlueStar)
+// starSelectColorChange.addEventListener("click", onClick)
 
 
 // starSelect.addEventListener("mouseover", mouseOver);
