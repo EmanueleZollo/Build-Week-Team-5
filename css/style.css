@@ -365,13 +365,14 @@ p span {
 }
 
 .big {
-  font-size: 5rem;
+  font-size: 4rem;
 }
 
 .fa-star {
   display: inline-block;
   text-align: center;
   margin-inline: 5px;
+  cursor: pointer;
 }
 
 #comment {
