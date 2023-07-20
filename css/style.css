@@ -359,11 +359,11 @@ p span {
 
 .fa-star {
   font-size: xxx-large;
-  color: black;
+  fill: black;
 }
 
 .starColorChange {
-  color: #00ffff;
+  fill: #00ffff;
 }
 
 #comment {
