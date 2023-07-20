@@ -540,7 +540,6 @@ function startQuiz() {
   score = 0;
   nextButton.innerHTML = "Next";
   showQuestion();
-  resetTimer();
   setRemainingPathColor(TIME_LIMIT);
   startTimer();
 }
