@@ -653,7 +653,7 @@ function svuota() {
           <p class="right-answers"></p>
         </div>
         <div class="results-central-container">
-        <canvas id="myDonutChart" width="600" height="600"></canvas>
+        <canvas id="myDonutChart" width="500px" height="500px"></canvas>
         </div>
         <div class="results-right-container">
           <h2 class="correct-wrong" id="wrong">Wrong<br /><strong class="percentage">%</strong></h2>
