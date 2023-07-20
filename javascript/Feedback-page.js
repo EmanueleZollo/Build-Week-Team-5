@@ -1,29 +1,38 @@
 // VOTO CON SELEZIONE DELLE STELLE - BLOCCO DEL TASTO "MORE INFO"
-// const  fixBlackStar = document.getElementById("starRate");
+const  fixBlackStar = document.getElementById("starRate");
+const starsArray = [];
+const singleStar = `<img src="./assets/star.svg" class="fa-star" alt="Stelle">`
 
-// for (let i = 0; i < 10; i++) {
-//    fixBlackStar.innerHTML +=          
-// //    `<i class="fas fa-star"> </i>`
-//  `<img src="./assets/star.svg" class="fa-star" alt="Stelle">`
+for (let i = 0; i < 10; i++) {
+    starsArray.push(singleStar)
+}
+console.log(starsArray);
+
+for (let i = 0; i < starsArray.length; i++) {
+    fixBlackStar.innerHTML += singleStar        
+ //    `<i class="fas fa-star"> </i>`
+ }
+
+ singleStar.addEventListener("click", fixBlueStar)
+
+
+//  const mouseOver = function() {
+//   starSelect.style.color = "red";
 // }
 
-// //  const mouseOver = function() {
-// //   starSelect.style.color = "red";
-// // }
+//  const mouseOut  = function() {
+//   starSelect.style.color = "black";
+// }
+const starSelectColorChange = document.getElementsByClassName ("fa-star")
 
-// //  const mouseOut  = function() {
-// //   starSelect.style.color = "black";
-// // }
-// const starSelectColorChange = document.getElementsByClassName ("fa-star")
-
-// const fixBlueStar  = function() {
-//     for (let i = 0; i < 10; i++) {
+const fixBlueStar  = function() {
+    for (let i = 0; i < 10; i++) {
     
-//     return starSelectColorChange.classList.add( "starColorChange")  
-//     }
-// }
+    return starSelectColorChange.classList.add( "starColorChange")  
+    }
+}
    
-// starSelectColorChange.addEventListener("click", fixBlueStar)
+starSelectColorChange.addEventListener("click", fixBlueStar)
 
 
 // starSelect.addEventListener("mouseover", mouseOver);

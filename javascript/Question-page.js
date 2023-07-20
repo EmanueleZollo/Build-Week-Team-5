@@ -523,6 +523,8 @@ const questionElement = document.getElementById("question");
 const answersButton = document.getElementById("answerButtonsJs");
 const nextButton = document.getElementById("next");
 
+const questF = document.getElementById("questFooter");
+
 /*nextButton.addEventListener("click", startQuiz);*/
 nextButton.addEventListener("click", showNextQuestion);
 
@@ -530,6 +532,7 @@ let currentQuestionI = -1;
 let score = 0;
 let scoreX = 0;
 let answered = false;
+let quest = 1;
 
 function startQuiz() {
   currentQuestionI = 0;
@@ -545,6 +548,8 @@ function showQuestion() {
   let currentQuestion = questions[currentQuestionI];
   let questionNum = currentQuestionI + 1;
   questionElement.innerHTML = " Domanda num. " + questionNum + ": " + currentQuestion.question;
+
+  questF.innerHTML = `QUESTION ${quest++} <span>/10</span>`;
 
   let answers = currentQuestion.incorrect_answers.concat(currentQuestion.correct_answer);
   randomQuestions(answers);
