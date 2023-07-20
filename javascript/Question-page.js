@@ -437,7 +437,8 @@ let timeLeft = TIME_LIMIT;
 let timerInterval = null;
 let remainingPathColor = COLOR_CODES.info.color;
 
-document.getElementById("app").innerHTML = `
+const createTimer = function () {
+  document.getElementById("app").innerHTML = `
 <div class="base-timer">
   <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
     <g class="base-timer__circle">
@@ -458,8 +459,7 @@ document.getElementById("app").innerHTML = `
   <span id="base-timer-label" class="base-timer__label">${formatTime(timeLeft)}</span>
 </div>
 `;
-
-startTimer();
+};
 
 function onTimesUp() {
   clearInterval(timerInterval);
@@ -533,6 +533,7 @@ let score = 0;
 let scoreX = 0;
 let answered = false;
 let quest = 1;
+let selectedButton = null;
 
 function startQuiz() {
   currentQuestionI = 0;
@@ -541,25 +542,30 @@ function startQuiz() {
   showQuestion();
   resetTimer();
   setRemainingPathColor(TIME_LIMIT);
+  startTimer();
 }
 
 function showQuestion() {
+  createTimer();
   resetBtn();
   let currentQuestion = questions[currentQuestionI];
-  let questionNum = currentQuestionI + 1;
-  questionElement.innerHTML = " Domanda num. " + questionNum + ": " + currentQuestion.question;
+  questionElement.innerHTML = currentQuestion.question;
 
-  questF.innerHTML = `QUESTION ${quest++} <span>/10</span>`;
+  questF.innerHTML = `QUESTION ${quest++} <span>/ ${questions.length}</span>`;
 
   let answers = currentQuestion.incorrect_answers.concat(currentQuestion.correct_answer);
   randomQuestions(answers);
 
-  answers.forEach((answer) => {
+  answers.forEach(answer => {
     const button = document.createElement("button");
     button.innerHTML = answer;
     button.classList.add("answer");
     answersButton.appendChild(button);
-    button.addEventListener("click", selectAnswer);
+    answersButton.addEventListener("click", function (event) {
+      if (event.target.classList.contains("answer")) {
+        selectAnswer(event);
+      }
+    });
   });
 }
 
@@ -570,19 +576,28 @@ function selectAnswer(event) {
   const selectedAnswer = event.target.innerHTML;
   const correctAnswer = questions[currentQuestionI].correct_answer;
 
-  if (selectedAnswer === correctAnswer) {
-    score++;
-    /*answersButton.classList.add("bg-green");*/
-    console.log("Risposta corretta!");
-  } else {
-    console.log("Risposta errata.");
-    /*answersButton.classList.add("bg-red");*/
-  }
-  nextButton.style.display = "inline-block";
+  const answerButtons = document.querySelectorAll(".answer");
 
-  const answerButtons = document.querySelectorAll(".btn");
-  answerButtons.forEach((button) => (button.disabled = true));
-  console.log(score);
+  answerButtons.forEach(button => (button.disabled = true));
+
+  if (selectedButton !== null) {
+    selectedButton.classList.remove("selectedButton");
+  }
+
+  if (selectedButton === event.target) {
+    selectedButton = null;
+  } else {
+    if (selectedAnswer === correctAnswer) {
+      score++;
+      console.log("Risposta corretta!");
+    } else {
+      console.log("Risposta errata.");
+    }
+    event.target.classList.add("selectedButton");
+    selectedButton = event.target;
+    nextButton.style.display = "inline-block";
+    console.log(score);
+  }
 }
 
 function showNextQuestion() {
@@ -596,8 +611,64 @@ function showNextQuestion() {
   } else {
     scoreX = score;
     console.log(scoreX);
-    window.location.href = "./Results-page.html";
+    svuota();
   }
+}
+
+function correct() {
+  document.getElementById("resultScore").innerHTML =
+    "Correct <br>" +
+    (scoreX / questions.length) * 100 +
+    "% <br><p>" +
+    scoreX +
+    " / " +
+    questions.length +
+    " " +
+    "questions </p>";
+  document.getElementById("wrong").innerHTML =
+    "Wrong <br>" +
+    (100 - (scoreX / questions.length) * 100) +
+    "% <br><p>" +
+    (questions.length - scoreX) +
+    " / " +
+    questions.length +
+    " " +
+    "questions </p>";
+}
+
+function svuota() {
+  document.getElementById("Svuota").innerHTML = `
+<body>
+    <main>
+      <header>
+        <img class="logo" src="./assets/epicode_logo.png" alt="logo-EPICODE" />
+      </header>
+      <div class="results-title-container">
+        <h2>Results</h2>
+        <h4>The summary of your answers:</h4>
+      </div>
+      <section class="results-section-container">
+        <div class="results-left-container">
+          <h2 class="correct-wrong" id="resultScore">Correct<br /><strong class="percentage">%</strong></h2>
+          <p class="right-answers"></p>
+        </div>
+        <div class="results-central-container">
+        <canvas id="myDonutChart" width="600" height="600"></canvas>
+        </div>
+        <div class="results-right-container">
+          <h2 class="correct-wrong" id="wrong">Wrong<br /><strong class="percentage">%</strong></h2>
+          <p class="wrong-answers"></p>
+        </div>
+      </section>
+      <footer class="results-footer">
+        <button class="results-button"><a>RATE US</a></button>
+      </footer>
+    </main>
+</body>
+`;
+  correct();
+  drawChart();
+  nextPage();
 }
 
 function randomQuestions(array) {
@@ -644,7 +715,6 @@ function setRemainingPathColor(timeLeft) {
 
 function handleTimesUp() {
   onTimesUp();
-  showNextQuestion();
 }
 
 function onTimesUp() {
@@ -657,7 +727,82 @@ function onTimesUp() {
 
 // RESULT PAGE
 
-localStorage.setItem("scoreX", scoreX);
+const drawChart = function () {
+  const corrette = (scoreX / questions.length) * 100;
+  const sbagliate = 100 - (scoreX / questions.length) * 100 + (questions.length - scoreX);
 
-/*const resScore = document.getElementById("resultScore");
-resScore.innerText = scoreX;*/
+  const coloreCorrette = "cyan";
+  const coloreSbagliate = "MediumVioletRed";
+
+  const canvas = document.getElementById("myDonutChart");
+  const ctx = canvas.getContext("2d");
+
+  const canvasWidth = canvas.width;
+  const canvasHeight = canvas.height;
+
+  const radius = Math.min(canvasWidth, canvasHeight) / 2.3;
+
+  const centerX = canvasWidth / 2;
+  const centerY = canvasHeight / 2;
+
+  function drawDonutArc(startAngle, endAngle, colore) {
+    ctx.beginPath();
+    ctx.arc(centerX, centerY, radius, startAngle, endAngle);
+    ctx.arc(centerX, centerY, radius * 0.7, endAngle, startAngle, true);
+    ctx.closePath();
+    ctx.fillStyle = colore;
+    ctx.fill();
+  }
+
+  function drawText() {
+    ctx.fillStyle = "white";
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+    const fontSize = 25;
+    ctx.font = `${fontSize}px Inter`;
+
+    if (corrette >= 60) {
+      ctx.fillStyle = "white";
+      ctx.font = `bold ${fontSize}px Inter`;
+      ctx.fillText("Congratulations!", centerX, centerY - fontSize * 2);
+      ctx.fillStyle = "cyan";
+      ctx.fillText("You passed the exam.", centerX, centerY - fontSize);
+      ctx.fillStyle = "white";
+      ctx.font = `18px Inter`;
+      ctx.fillText("We'll send you the certificate", centerX, centerY + fontSize * 0.75);
+      ctx.fillText("in a few minutes.", centerX, centerY + fontSize * 1.5);
+      ctx.fillText("Check your email (including", centerX, centerY + fontSize * 2.25);
+      ctx.fillText("promotions / spam folder)", centerX, centerY + fontSize * 3);
+    } else {
+      ctx.font = `bold ${fontSize}px Inter`;
+      ctx.fillStyle = "red";
+      ctx.fillText("You failed the exam.", centerX, centerY - fontSize);
+      ctx.fillStyle = "white";
+      ctx.font = `18px Inter`;
+      ctx.fillText("But don't worry,", centerX, centerY + fontSize * 0.75);
+      ctx.fillText("you can always retry", centerX, centerY + fontSize * 1.5);
+    }
+  }
+
+  const total = corrette + sbagliate;
+  const corretteAngle = (corrette / total) * 2 * Math.PI;
+  const sbagliateAngle = (sbagliate / total) * 2 * Math.PI;
+  drawDonutArc(-Math.PI / 2 - corretteAngle, -Math.PI / 2, coloreCorrette);
+
+  drawDonutArc(-Math.PI / 2, -Math.PI / 2 + sbagliateAngle, coloreSbagliate);
+
+  drawText();
+};
+
+const nextPage = function () {
+  const websiteButton = document.querySelector(".results-button");
+  const newLink = document.querySelector("a");
+
+  const feedbackLink = function () {
+    newLink.classList.add("linky");
+    newLink.setAttribute("href", "./Feedback-page.html");
+    return websiteButton.appendChild(newLink);
+  };
+
+  websiteButton.addEventListener("click", feedbackLink);
+};
