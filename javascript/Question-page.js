@@ -533,6 +533,7 @@ let score = 0;
 let scoreX = 0;
 let answered = false;
 let quest = 1;
+let selectedButton = null;
 
 function startQuiz() {
   currentQuestionI = 0;
@@ -548,8 +549,7 @@ function showQuestion() {
   createTimer();
   resetBtn();
   let currentQuestion = questions[currentQuestionI];
-  let questionNum = currentQuestionI + 1;
-  questionElement.innerHTML = " Domanda num. " + questionNum + ": " + currentQuestion.question;
+  questionElement.innerHTML = currentQuestion.question;
 
   questF.innerHTML = `QUESTION ${quest++} <span>/ ${questions.length}</span>`;
 
@@ -561,7 +561,11 @@ function showQuestion() {
     button.innerHTML = answer;
     button.classList.add("answer");
     answersButton.appendChild(button);
-    button.addEventListener("click", selectAnswer);
+    answersButton.addEventListener("click", function (event) {
+      if (event.target.classList.contains("answer")) {
+        selectAnswer(event);
+      }
+    });
   });
 }
 
@@ -572,19 +576,28 @@ function selectAnswer(event) {
   const selectedAnswer = event.target.innerHTML;
   const correctAnswer = questions[currentQuestionI].correct_answer;
 
-  if (selectedAnswer === correctAnswer) {
-    score++;
-    /*answersButton.classList.add("bg-green");*/
-    console.log("Risposta corretta!");
-  } else {
-    console.log("Risposta errata.");
-    /*answersButton.classList.add("bg-red");*/
-  }
-  nextButton.style.display = "inline-block";
+  const answerButtons = document.querySelectorAll(".answer");
 
-  const answerButtons = document.querySelectorAll(".btn");
   answerButtons.forEach(button => (button.disabled = true));
-  console.log(score);
+
+  if (selectedButton !== null) {
+    selectedButton.classList.remove("selectedButton");
+  }
+
+  if (selectedButton === event.target) {
+    selectedButton = null;
+  } else {
+    if (selectedAnswer === correctAnswer) {
+      score++;
+      console.log("Risposta corretta!");
+    } else {
+      console.log("Risposta errata.");
+    }
+    event.target.classList.add("selectedButton");
+    selectedButton = event.target;
+    nextButton.style.display = "inline-block";
+    console.log(score);
+  }
 }
 
 function showNextQuestion() {
@@ -604,9 +617,23 @@ function showNextQuestion() {
 
 function correct() {
   document.getElementById("resultScore").innerHTML =
-    "Correct <br>" + (scoreX / questions.length) * 100 + "% <br>" + scoreX + "/5 questions";
+    "Correct <br>" +
+    (scoreX / questions.length) * 100 +
+    "% <br><p>" +
+    scoreX +
+    " / " +
+    questions.length +
+    " " +
+    "questions </p>";
   document.getElementById("wrong").innerHTML =
-    "Wrong <br>" + (100 - (scoreX / questions.length) * 100) + "% <br>" + (questions.length - scoreX) + "/5 questions";
+    "Wrong <br>" +
+    (100 - (scoreX / questions.length) * 100) +
+    "% <br><p>" +
+    (questions.length - scoreX) +
+    " / " +
+    questions.length +
+    " " +
+    "questions </p>";
 }
 
 function svuota() {
