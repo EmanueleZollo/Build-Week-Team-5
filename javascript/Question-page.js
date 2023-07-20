@@ -437,7 +437,8 @@ let timeLeft = TIME_LIMIT;
 let timerInterval = null;
 let remainingPathColor = COLOR_CODES.info.color;
 
-document.getElementById("app").innerHTML = `
+const createTimer = function () {
+  document.getElementById("app").innerHTML = `
 <div class="base-timer">
   <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
     <g class="base-timer__circle">
@@ -458,8 +459,7 @@ document.getElementById("app").innerHTML = `
   <span id="base-timer-label" class="base-timer__label">${formatTime(timeLeft)}</span>
 </div>
 `;
-
-startTimer();
+};
 
 function onTimesUp() {
   clearInterval(timerInterval);
@@ -541,15 +541,17 @@ function startQuiz() {
   showQuestion();
   resetTimer();
   setRemainingPathColor(TIME_LIMIT);
+  startTimer();
 }
 
 function showQuestion() {
+  createTimer();
   resetBtn();
   let currentQuestion = questions[currentQuestionI];
   let questionNum = currentQuestionI + 1;
   questionElement.innerHTML = " Domanda num. " + questionNum + ": " + currentQuestion.question;
 
-  questF.innerHTML = `QUESTION ${quest++} <span>/10</span>`;
+  questF.innerHTML = `QUESTION ${quest++} <span>/ ${questions.length}</span>`;
 
   let answers = currentQuestion.incorrect_answers.concat(currentQuestion.correct_answer);
   randomQuestions(answers);
@@ -602,9 +604,9 @@ function showNextQuestion() {
 
 function correct() {
   document.getElementById("resultScore").innerHTML =
-    "Correct <br>" + (scoreX / 5) * 100 + "% <br>" + scoreX + "/5 questions";
+    "Correct <br>" + (scoreX / questions.length) * 100 + "% <br>" + scoreX + "/5 questions";
   document.getElementById("wrong").innerHTML =
-    "Wrong <br>" + (100 - (scoreX / 5) * 100) + "% <br>" + (5 - scoreX) + "/5 questions";
+    "Wrong <br>" + (100 - (scoreX / questions.length) * 100) + "% <br>" + (questions.length - scoreX) + "/5 questions";
 }
 
 function svuota() {
@@ -639,6 +641,7 @@ function svuota() {
 `;
   correct();
   drawChart();
+  nextPage();
 }
 
 function randomQuestions(array) {
@@ -685,7 +688,6 @@ function setRemainingPathColor(timeLeft) {
 
 function handleTimesUp() {
   onTimesUp();
-  showNextQuestion();
 }
 
 function onTimesUp() {
@@ -699,8 +701,8 @@ function onTimesUp() {
 // RESULT PAGE
 
 const drawChart = function () {
-  const corrette = 60;
-  const sbagliate = 40;
+  const corrette = (scoreX / questions.length) * 100;
+  const sbagliate = 100 - (scoreX / questions.length) * 100 + (questions.length - scoreX);
 
   const coloreCorrette = "cyan";
   const coloreSbagliate = "MediumVioletRed";
@@ -765,13 +767,15 @@ const drawChart = function () {
   drawText();
 };
 
-const websiteButton = document.querySelector(".results-button");
-const newLink = document.querySelector("a");
+const nextPage = function () {
+  const websiteButton = document.querySelector(".results-button");
+  const newLink = document.querySelector("a");
 
-const feedbackLink = function () {
-  newLink.classList.add("linky");
-  newLink.setAttribute("href", "./Feedback-page.html");
-  return websiteButton.appendChild(newLink);
+  const feedbackLink = function () {
+    newLink.classList.add("linky");
+    newLink.setAttribute("href", "./Feedback-page.html");
+    return websiteButton.appendChild(newLink);
+  };
+
+  websiteButton.addEventListener("click", feedbackLink);
 };
-
-websiteButton.addEventListener("click", feedbackLink);
