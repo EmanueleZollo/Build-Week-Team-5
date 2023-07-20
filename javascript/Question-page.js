@@ -740,7 +740,7 @@ const drawChart = function () {
   const canvasWidth = canvas.width;
   const canvasHeight = canvas.height;
 
-  const radius = Math.min(canvasWidth, canvasHeight) / 2.3;
+  const radius = Math.min(canvasWidth, canvasHeight) / 2;
 
   const centerX = canvasWidth / 2;
   const centerY = canvasHeight / 2;
