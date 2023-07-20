@@ -360,12 +360,14 @@ p span {
   margin-bottom: 3rem;
 }
 
-.fa-star {
-  fill: black;
+.big {
+  font-size: 5rem;
 }
 
-.starColorChange {
-  fill: #00ffff;
+.fa-star {
+  display: inline-block;
+  text-align: center;
+  margin-inline: 5px;
 }
 
 #comment {
