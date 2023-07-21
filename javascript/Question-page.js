@@ -654,6 +654,7 @@ function correct() {
 // FUNZIONE PER SVUOTARE L'HTML
 
 function svuota() {
+  clearInterval(timerInterval);
   document.getElementById("Svuota").innerHTML = `
 <body>
 <header>
