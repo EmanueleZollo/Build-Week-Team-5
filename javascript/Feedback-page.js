@@ -19,7 +19,7 @@ getDomStars(starList)
 const star = document.querySelectorAll('.fa-star');
 getEventListener();
 
-//EVEN LISTENER FOR SINGLE STARS
+//EVENT LISTENER FOR SINGLE STARS
 
 
 
@@ -78,12 +78,9 @@ function getStars(number) {
 let inputRequired = document.getElementById("comment");
 
 const inputBlock = function () {
-    if (inputRequired.value.length > 10) {
+    if (inputRequired.value.length > 10 && getEventListener() == true) {
         websiteButton.addEventListener("click", websiteLink)
    } 
-// else {
-//     alert("you have to fill out the comment line with at least 11 characters - scrivi un commento di almeno 11 caratteri")
-//    }
  }
 
 inputRequired.addEventListener("change",inputBlock);
