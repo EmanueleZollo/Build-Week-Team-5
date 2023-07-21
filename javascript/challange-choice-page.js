@@ -413,8 +413,36 @@ const questions = [
 
 let easyQuestions = []
   const easyChallange = function () {
+<<<<<<< Updated upstream
     easyQuestions = questions.filter(element => element.difficulty === "hard")
     return easyQuestions
     }
 
     console.log(easyChallange());
+=======
+    easyQuestions = questions.filter(element => element.difficulty === "easy")
+    return easyQuestions
+    }
+
+    console.log(easyChallange());
+
+
+    let mediumQuestions = []
+  const mediumChallange = function () {
+    easyQuestions = questions.filter(element => element.difficulty === "medium")
+    return mediumQuestions
+    }
+
+    console.log(mediumChallange());
+
+
+    let difficultQuestions = []
+  const difficultQuestionsChallange = function () {
+    easyQuestions = questions.filter(element => element.difficulty === "difficult")
+    return easyQuestions
+    }
+
+    console.log(difficultQuestionsChallange());
+
+    
+>>>>>>> Stashed changes
