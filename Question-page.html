@@ -8,53 +8,26 @@
     <link rel="stylesheet" href="./css/style.css" />
     <title>Benchmark page</title>
   </head>
-  <body>
+  <body onload="startQuiz()" id="Svuota">
     <header>
       <img class="logo" src="./assets/epicode_logo.png" alt="logo EPICODE" />
       <div></div>
     </header>
 
-    <!--<main>
-      <div id="app"></div>
-      <div id="asadiv">
-        <h2 id="questions-title"><span class="questionPageTitle">How can I create a </span> <br />checkbox in HTML?</h2>
-      </div>
-
-      <section id="answerPos">
-        <div class="answer">
-          <p>Risposta 1</p>
-        </div>
-        <div class="answer">
-          <p>Risposta 2</p>
-        </div>
-        <div class="answer">
-          <p>Risposta 3</p>
-        </div>
-        <div class="answer">
-          <p>Risposta 4</p>
-        </div>
-      </section> -->
-
     <main>
       <div id="app" class="container"></div>
       <div class="asadiv" id="question-container"></div>
-      <div id="question" class="titleQuestion">Here the next question</div>
+      <div id="question" class="titleQuestion"></div>
 
-      <section class="answerPos" id="answerButtonsJs">
-        <button class="answer" id="alpha">Here the Answer 1</button>
-        <button class="answer" id="alpha">Here the Answer 2</button>
-        <button class="answer" id="alpha">Here the Answer 3</button>
-        <button class="answer" id="alpha">Here the Answer 4</button>
-      </section>
+      <section class="answerPos" id="answerButtonsJs"></section>
 
-      <div class="next-button-container controls">
-        <button id="next" class="next-button">NEXT</button>
-      </div>
+      <p id="questFooter"></p>
       <footer id="questionCount">
-        <p>QUESTION 1 <span>/10</span></p>
+        <div class="next-button-container controls">
+          <button id="next" class="next-button" style="display: none">NEXT</button>
+        </div>
       </footer>
     </main>
-
-    <script src="./javascript/Question-page.js"></script>
   </body>
+  <script src="./javascript/Question-page.js"></script>
 </html>
