@@ -59,18 +59,32 @@ h4 {
   font-size: 150%;
 }
 
+.inactiveSubmitButton {
+  background-color: transparent;
+  color: white;
+  border: white 2px solid;
+  opacity: 0.5;
+  padding-inline: 75px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: x-large;
+  cursor: pointer;
+}
+
 .submitButton {
   background-color: #00ffff;
   color: black;
   box-shadow: -1px 1px 29px -1px #00ffff;
   accent-color: #00ffff;
   border: #00ffff 2px solid;
-  padding-inline: 35px;
-  padding-top: 15px;
-  padding-bottom: 15px;
+  padding-inline: 75px;
+  padding-top: 25px;
+  padding-bottom: 25px;
   font-family: "Inter", sans-serif;
   font-weight: 700;
-  font-size: large;
+  font-size: x-large;
   cursor: pointer;
 }
 
@@ -119,14 +133,22 @@ h4 {
 }
 
 .WP-footer label {
-  width: 30px;
-  height: 30px;
+  width: 25px;
+  height: 25px;
   display: inline-block;
-  background-color: lightgray;
+  background-color: transparent;
+  border: solid 3px white;
+  vertical-align: middle;
 }
 
 #WP-input:checked + label {
   background-color: #00ffff;
+}
+
+.WP-footer-text {
+  display: inline-block;
+  margin-left: 10px;
+  vertical-align: middle;
 }
 
 /* QUESTION PAGE STYLE */
