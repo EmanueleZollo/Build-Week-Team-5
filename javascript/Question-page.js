@@ -638,10 +638,10 @@ function correct() {
 function svuota() {
   document.getElementById("Svuota").innerHTML = `
 <body>
+<header>
+  <img class="logo" src="./assets/epicode_logo.png" alt="logo-EPICODE" />
+</header>
     <main>
-      <header>
-        <img class="logo" src="./assets/epicode_logo.png" alt="logo-EPICODE" />
-      </header>
       <div class="results-title-container">
         <h2>Results</h2>
         <h4>The summary of your answers:</h4>
@@ -660,7 +660,7 @@ function svuota() {
         </div>
       </section>
       <footer class="results-footer">
-        <button class="results-button"><a>RATE US</a></button>
+      <a><button class="results-button">RATE US</button></a>
       </footer>
     </main>
 </body>
