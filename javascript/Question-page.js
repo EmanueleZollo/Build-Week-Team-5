@@ -746,7 +746,7 @@ function onTimesUp() {
 
 const drawChart = function () {
   const corrette = (scoreX / questions.length) * 100;
-  const sbagliate = 100 - (scoreX / questions.length) * 100 + (questions.length - scoreX);
+  const sbagliate = 100 - corrette;
 
   const coloreCorrette = "cyan";
   const coloreSbagliate = "MediumVioletRed";
