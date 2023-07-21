@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Quesiti di esame" />
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Benchmark page</title>
+  </head>
+  <body onload="startQuiz()" id="Svuota">
+    <header>
+      <img class="logo" src="./assets/epicode_logo.png" alt="logo EPICODE" />
+      <div></div>
+    </header>
+
+    <main>
+      <div id="app" class="container"></div>
+      <div class="asadiv" id="question-container"></div>
+      <div id="question" class="titleQuestion"></div>
+
+      <section class="answerPos" id="answerButtonsJs"></section>
+
+      <p id="questFooter"></p>
+      <footer id="questionCount">
+        <div class="next-button-container controls">
+          <button id="next" class="next-button" style="display: none">
+            NEXT
+          </button>
+        </div>
+      </footer>
+    </main>
+    <script src="./javascript/Question-page.js"></script>
+  </body>
+</html>

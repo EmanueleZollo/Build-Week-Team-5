@@ -411,6 +411,68 @@ const questions = [
   // },
 ];
 
+// choose Difficulty
+
+function svuota1() {
+  document.getElementById("svuota1").innerHTML = `
+  <body onload="startQuiz()" id="Svuota">
+  <header>
+    <img class="logo" src="./assets/epicode_logo.png" alt="logo EPICODE" />
+    <div></div>
+  </header>
+
+  <main>
+    <div id="app" class="container"></div>
+    <div class="asadiv" id="question-container"></div>
+    <div id="question" class="titleQuestion"></div>
+
+    <section class="answerPos" id="answerButtonsJs"></section>
+
+    <p id="questFooter"></p>
+    <footer id="questionCount">
+      <div class="next-button-container controls">
+        <button id="next" class="next-button" style="display: none">NEXT</button>
+      </div>
+    </footer>
+  </main>
+  <script src="./javascript/Question-page.js"></script>
+</body>
+`;
+  correct();
+  drawChart();
+  nextPage();
+}
+
+let easyQuestions = [];
+  const easyChallange = function () {
+    easyQuestions = questions.filter(element => element.difficulty === "easy")
+    return easyQuestions
+    }
+
+    console.log(easyChallange());
+
+
+    let mediumQuestions = []
+  const mediumChallange = function () {
+    mediumQuestions = questions.filter(element => element.difficulty === "medium")
+    return mediumQuestions
+    }
+
+    console.log(mediumChallange());
+
+
+    let difficultQuestions = []
+  const difficultChallange = function () {
+    difficultQuestions = questions.filter(element => element.difficulty === "difficult")
+    return difficultQuestions
+    }
+
+    console.log(difficultQuestionsChallange());
+
+    document.getElementById("Qdiff-easy").addEventListener("click", easyChallange)
+    document.getElementById("Qdiff-medium").addEventListener("click", mediumChallange)
+    document.getElementById("Qdiff-hard").addEventListener("click", difficultChallange)
+
 //TIMER
 
 const FULL_DASH_ARRAY = 283;
@@ -558,8 +620,21 @@ function Giacomino (btn) {
 function showQuestion() {
   createTimer();
   resetBtn();
-  let currentQuestion = questions[currentQuestionI];
+  if (inputBlock.value === misto) {
+    let currentQuestion = questions[currentQuestionI];
   questionElement.innerHTML = currentQuestion.question;
+  } else if (inputBlock.value === easy){
+    let currentQuestion = easyQuestions[currentQuestionI];
+    questionElement.innerHTML = currentQuestion.question;
+  }
+  } else if (inputBlock.value === medium){
+    let currentQuestion = mediumQuestions[currentQuestionI];
+    questionElement.innerHTML = currentQuestion.question;
+  } else {
+    let currentQuestion = difficultQuestions[currentQuestionI];
+    questionElement.innerHTML = currentQuestion.question;
+  }
+  
 
   questF.innerHTML = `QUESTION ${quest++} <span>/ ${questions.length}</span>`;
 
