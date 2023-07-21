@@ -1,6 +1,5 @@
 // VOTO CON SELEZIONE DELLE STELLE - BLOCCO DEL TASTO "MORE INFO"
 
-
 const starWrapper = document.querySelector("#starRate");
 let singleStar = 0;
 let starList =  getStars(singleStar);
@@ -8,67 +7,53 @@ let starList =  getStars(singleStar);
 //ENTERING STARS
 
 function getDomStars(list) {
-
     for(let i = 0; i <= list.length - 1; i++) {
-
         starWrapper.innerHTML += `${list[i]}`;
-
     }
 }
+
 getDomStars(starList)
 const star = document.querySelectorAll('.fa-star');
 getEventListener();
 
 //EVENT LISTENER FOR SINGLE STARS
 
-
-
 function getEventListener() {
    const star = document.querySelectorAll('.fa-star');
-for (let i = 0; i <= star.length - 1; i++) {
-
-    star[i].addEventListener('click', function() { 
-
-        singleStar = parseInt([i + 1]);
-        starList = getStars(singleStar);
-        removeDomStars();
-        getDomStars(starList);
-        getEventListener();
-    });
-}
+    for (let i = 0; i <= star.length - 1; i++) {
+        star[i].addEventListener('click', function() { 
+            singleStar = parseInt([i + 1]);
+            starList = getStars(singleStar);
+            removeDomStars();
+            getDomStars(starList);
+            getEventListener();
+        });
+    }
 }
 
 //REMOVE STARS
 
 function removeDomStars() {
-
     for(let i = 1; i <= star.length; i++) {
-
         const eraseStar = document.querySelector("i:first-child")
         eraseStar.parentElement.removeChild(eraseStar)
-
     }
-
 }
 
 // PUSH 
 function getStars(number) {
-
     let newStar = [];
-
-    for(let i = 0; i < number ; i++) {
-        
+    for(let i = 0; i < number ; i++) {   
         let singleStar = `<i class="fas fa-star big" style="color: #00ffff" id="star${i}"></i>`
         newStar.push(singleStar)
-
+        // `<i class="fas fa-star big" style="color: #00ffff" id="star${i}"></i>`
     }
+
     for(let i = number; i <= (10 - 1) ; i++) {
-        
         let singleStar = `<i class="fas fa-star big" style="color: #000000"  id="star${i}"></i>` 
         newStar.push(singleStar)
-
+        // `<i class="fas fa-star big" style="color: #000000"  id="star${i}"></i>`
     }
-
     return newStar;
 }
 
@@ -78,7 +63,7 @@ function getStars(number) {
 let inputRequired = document.getElementById("comment");
 
 const inputBlock = function () {
-    if (inputRequired.value.length > 10 && getEventListener() == true) {
+    if (inputRequired.value.length > 10) {
         websiteButton.addEventListener("click", websiteLink)
    } 
  }
